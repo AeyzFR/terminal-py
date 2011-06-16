@@ -1,19 +1,44 @@
-#How to get started with the terminal library
+# Getting started with the terminal library
 
-= Introduction =
+= Getting started with the terminal library =
 
-Add your content here.
+{{{
+import terminal
+}}}
+
+== Examples: ==
+=== Adding color to text ===
+
+{{{
+print "%s %s" % (terminal.AnsiText('Hello', ['red']),
+                 terminal.AnsiText(' World', ['yellow', 'bold'])
+}}}
+
+*=>* <font color="red">Hello</font><b><font color="orange"> World</font></b>
+
+=== Stripping color from text===
+{{{
+print StripAnsiText("%s %s" % (terminal.AnsiText('Hello', ['red']),
+                               terminal.AnsiText(' World', ['yellow', 'bold']))
+}}}
+
+*=>* Hello World
+
+===Determining Terminal dimensions===
+
+{{{
+TerminalSize()
+}}}
+
+*=>* (24, 80)
+
+===Formatting Text to Display Dimensions ===
+
+{{{
+}}}
 
 
-= Details =
+=== Paging Through Text===
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
-
-print terminal.AnsiText('Hello', ['red'])
-print terminal.AnsiText(' World', ['yellow', 'bg_black', 'bold'])
-
-<span style="color:red">Hello<span style="color:yellow;background-color:black'> World</span>
+{{{
+}}}
