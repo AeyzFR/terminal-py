@@ -53,7 +53,7 @@ characters wide."
 
 {{{
 """Supports paging of text on a terminal, somewhat like a simple 'more' or 'less'."""
-largetextblock = """Once apon a time ..."""
+largetextblock = """Once upon a time ..."""
 pager = terminal.Pager()
 pager.Page(text=largetextblock)
 }}}
