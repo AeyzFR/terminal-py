@@ -12,7 +12,7 @@ import terminal
 {{{
 """Wrap text in ANSI/SGR escape codes."""
 print '%s %s' % (terminal.AnsiText('Hello', ['red']),
-                 terminal.AnsiText(' World', ['yellow', 'bold'])
+                 terminal.AnsiText('World', ['yellow', 'bold'])
 }}}
 
 *=>* <font color="red">Hello</font><b><font color="orange"> World</font></b>
