@@ -10,7 +10,8 @@ import terminal
 === Adding color to text ===
 
 {{{
-print "%s %s" % (terminal.AnsiText('Hello', ['red']),
+"""Wrap text in ANSI/SGR escape codes."""
+print '%s %s' % (terminal.AnsiText('Hello', ['red']),
                  terminal.AnsiText(' World', ['yellow', 'bold'])
 }}}
 
@@ -18,8 +19,10 @@ print "%s %s" % (terminal.AnsiText('Hello', ['red']),
 
 === Stripping color from text===
 {{{
-print StripAnsiText("%s %s" % (terminal.AnsiText('Hello', ['red']),
-                               terminal.AnsiText(' World', ['yellow', 'bold']))
+"""Strip ANSI/SGR escape sequences from text."""
+txtstring = '%s %s' % (terminal.AnsiText('Hello', ['red']),
+                       terminal.AnsiText(' World', ['yellow', 'bold'])
+print StripAnsiText(txtstring)
 }}}
 
 *=>* Hello World
@@ -27,7 +30,8 @@ print StripAnsiText("%s %s" % (terminal.AnsiText('Hello', ['red']),
 ===Determining Terminal dimensions===
 
 {{{
-TerminalSize()
+"""Returns terminal length and width as a tuple."""
+terminal.TerminalSize()
 }}}
 
 *=>* (24, 80)
@@ -35,10 +39,21 @@ TerminalSize()
 ===Formatting Text to Display Dimensions ===
 
 {{{
+"""Break line to fit screen width, factoring in ANSI/SGR escape sequences."""
+txtstring = 'A string displayed on a terminal 20 characters wide.'
+print terminal.LineWrap(txtstring)
 }}}
 
+*=>* 
+<br>"A string displayed<br>
+on a terminal 20<br>
+characters wide."
 
-=== Paging Through Text===
+=== Interactively Paging Through Text===
 
 {{{
+"""Supports paging of text on a terminal, somewhat like a simple 'more' or 'less'."""
+largetextblock = """Once apon a time ..."""
+pager = terminal.Pager()
+pager.Page(text=largetextblock)
 }}}
