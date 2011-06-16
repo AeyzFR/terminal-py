@@ -1,4 +1,4 @@
-# Getting started with the terminal library
+#summary Getting started with the terminal library
 
 = Getting started with the terminal library =
 
